@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Ehan Badenhorst</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -23,29 +24,43 @@
 
     <section>
         <h2>Get In Touch</h2>
-        <p class="section-subtitle">Interested in working together? Let's connect and build something great!</p>
+        <span class="section-subtitle">Let's build something great together</span>
 
-        <div class="contact-info">
-            <p>📧 <strong>Email:</strong> <a href="mailto:badenhorstehan2@gmail.com" target="_blank">badenhorstehan2@gmail.com</a></p>
-            <p>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ehan-badenhorst-b7841b229/" target="_blank">linkedin.com/in/ehan-badenhorst-b7841b229</a></p>
-            <p>💻 <strong>GitHub:</strong> <a href="https://github.com/EhanBadenhorst" target="_blank">github.com/EhanBadenhorst</a></p>
-            <p>🎯 <strong>Fiverr:</strong> <a href="https://www.fiverr.com/s/WELAdal" target="_blank">fiverr.com/s/WELAdal</a></p>
+        <div class="intro-container" style="align-items: flex-start; gap: 4rem;">
+            <div class="contact-sidebar">
+                <div class="card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--primary);">
+                    <h3 style="margin-top: 0;"><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> Email</h3>
+                    <p><a href="mailto:badenhorstehan2@gmail.com" style="text-decoration: none; color: var(--text-main);">badenhorstehan2@gmail.com</a></p>
+                </div>
+
+                <div class="card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--primary);">
+                    <h3 style="margin-top: 0;"><i class="fa-brands fa-linkedin" style="color: var(--primary); margin-right: 10px;"></i> LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/ehan-badenhorst-b7841b229/" target="_blank" style="text-decoration: none; color: var(--text-main);">View Profile</a></p>
+                </div>
+
+                <div class="card" style="border-left: 5px solid var(--primary);">
+                    <h3 style="margin-top: 0;"><i class="fa-brands fa-github" style="color: var(--primary); margin-right: 10px;"></i> GitHub</h3>
+                    <p><a href="https://github.com/ecode-22" style="text-decoration: none; color: var(--text-main);">Follow My Work</a></p>
+                </div>
+            </div>
+
+            <div class="contact-main">
+                <form action="https://formspree.io/f/movnrdbk" method="POST" class="contact-form" style="max-width: 100%; margin: 0;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="How can I help you?" rows="6" required></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
         </div>
-
-        <h3 style="margin-top: 2.5rem; margin-bottom: 1rem;">Send Me a Message</h3>
-
-        <form action="https://formspree.io/f/movnrdbk" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
     </section>
 
     <footer>
-        &copy; 2025 Ehan Badenhorst | All Rights Reserved
+        &copy; 2026 Ehan Badenhorst | Stellenbosch, South Africa
     </footer>
-    <script src="features.js"></script>
 </body>
 
 </html>
