@@ -19,25 +19,95 @@
             <li><a href="cv.html">CV</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-text">Dark</span>
+        </button>
     </nav>
 
     <section>
         <h2>About Me</h2>
-        <span class="section-subtitle">The Intersection of Tech & Earth</span>
+        <span class="section-subtitle">The Intersection of Technology & Earth</span>
 
         <div class="card" style="margin-bottom: 2rem;">
-            <p>I am a final-year Software Engineering student at CTU Stellenbosch. My academic background has provided me with practical experience in <strong>Python, JavaScript, Java, HTML, and CSS</strong>. I am currently deepening my expertise in <strong>Java (Quarkus)</strong>                and <strong>PostgreSQL</strong>.</p>
+            <h3 style="margin-top: 0;">Technical Foundation</h3>
+            <p>
+                I am a final-year Software Engineering student at CTU Stellenbosch with a passion for building innovative digital solutions that solve real-world problems. My academic journey has equipped me with practical experience in <strong>Python</strong>,
+                <strong>JavaScript</strong>, <strong>Java (Quarkus)</strong>, <strong>C#</strong>, <strong>HTML</strong>, and <strong>CSS</strong>, along with a solid understanding of software development principles and version control using Git and GitHub.
+            </p>
+            <p>
+                I specialize in <strong>algorithm development</strong>, having created custom mathematical algorithms for agricultural land management that operate efficiently without backend dependencies. My experience extends to <strong>database design with PostgreSQL</strong>,
+                <strong>RESTful API development</strong>, and <strong>Progressive Web App (PWA) architecture</strong>.
+            </p>
+            <p>
+                As a daily Linux user (running <strong>Arch Linux</strong>, by the way), I've developed a deep understanding of systems administration, package management, and the command-line environment. I believe that understanding systems at a fundamental
+                level makes you a better developer—capable of debugging deeper and building more efficient software.
+            </p>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+            <h3 style="margin-top: 0;">Agricultural Background & Vision</h3>
+            <p>
+                Growing up with extensive farm work experience, I developed more than just a strong work ethic—I gained firsthand insight into the challenges farmers face daily. From equipment operation and maintenance to resource management under pressure, I understand
+                the practical realities of agricultural life.
+            </p>
+            <p>
+                This background drives my passion for <strong>agricultural technology advancement in South Africa</strong>. I believe the future of agriculture lies in data-driven decision-making, where technology empowers farmers to manage resources
+                more efficiently, improve yields sustainably, and make informed choices based on real-time data rather than guesswork.
+            </p>
+            <p>
+                My unique perspective—combining software engineering with agricultural domain knowledge—allows me to build tools that truly address farmers' needs, not just theoretical problems. I design interfaces that work in the field, algorithms that solve real operational
+                challenges, and systems that remain accessible even in areas with limited internet connectivity.
+            </p>
         </div>
 
         <div class="card">
-            <p>Growing up with an agricultural background has instilled in me a strong work ethic and the ability to solve problems on the fly. I am passionate about advancing technology in the agricultural sector in South Africa to improve performance and
-                resource management.</p>
+            <h3 style="margin-top: 0;">Professional Philosophy</h3>
+            <p>
+                I am fluent in both <strong>Afrikaans</strong> and <strong>English</strong>, and pride myself on clear communication, professionalism, and the ability to work effectively both independently and as part of a team. I approach every project
+                with a mindset of continuous learning—believing that one can learn from everyone, and staying hungry for information is what drives innovation.
+            </p>
+            <p>
+                My experience in demanding agricultural environments taught me adaptability, problem-solving under pressure, and the importance of impeccable record-keeping. These skills translate directly to software development, where attention to detail, systematic
+                thinking, and resilience are essential.
+            </p>
+            <p>
+                My goal is to contribute to impactful projects that make a real difference, particularly in software engineering for the agricultural sector. I'm eager to continue expanding my knowledge in algorithm development, system design, cloud infrastructure, and
+                emerging technologies that can transform how we approach resource management and sustainability.
+            </p>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Ehan Badenhorst
+        &copy; 2026 Ehan Badenhorst | Stellenbosch, South Africa
     </footer>
+
+    <script src="features.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            document.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
+            document.querySelector('.theme-text').textContent = isDark ? 'Light' : 'Dark';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.querySelector('.theme-icon').textContent = '☀️';
+            document.querySelector('.theme-text').textContent = 'Light';
+        }
+    </script>
 </body>
 
 </html>

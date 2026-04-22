@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills | Ehan Badenhorst</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
@@ -19,23 +20,138 @@
             <li><a href="cv.html">CV</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-text">Dark</span>
+        </button>
     </nav>
 
     <section>
         <h2>Skills & Expertise</h2>
-        <span class="section-subtitle">Technical & Practical Toolkit</span>
+        <span class="section-subtitle">Technical & Practical Capabilities</span>
 
+        <h3>Programming & Development</h3>
         <ul class="skill-list">
-            <li><strong>Programming:</strong> Java (Quarkus), Python, JavaScript, HTML5, CSS3</li>
-            <li><strong>Database & Backend:</strong> PostgreSQL, Hibernate, REST APIs</li>
-            <li><strong>Web Development:</strong> Responsive Design, PWA, Leaflet.js, UI/UX</li>
-            <li><strong>Practical:</strong> Equipment Operation, Welding & Fabrication, Technical Troubleshooting</li>
+            <li class="skill-item">
+                💻 <strong>Programming Languages:</strong>
+                <i class="fa-brands fa-java" style="color:#007396;"></i> Java (Quarkus, Hibernate),
+                <i class="fa-brands fa-python" style="color:#3776ab;"></i> Python,
+                <i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript (ES6+),
+                <i class="fa-brands fa-html5" style="color:#e44d26;"></i> HTML5,
+                <i class="fa-brands fa-css3-alt" style="color:#2965f1;"></i> CSS3, C# (Learning)
+            </li>
+            <li class="skill-item">
+                🗄️ <strong>Database & Backend:</strong> PostgreSQL, Hibernate ORM, RESTful API Development, localStorage, IndexedDB
+            </li>
+            <li class="skill-item">
+                🎨 <strong>Frontend Development:</strong> Custom CSS3 (Flexbox/Grid), Responsive Design, PWA Development, Leaflet.js, UI/UX Design Principles, Service Workers
+            </li>
+            <li class="skill-item">
+                🛠️ <strong>Development Tools:</strong>
+                <i class="fa-brands fa-git-alt" style="color:#f34f29;"></i> Git,
+                <i class="fa-brands fa-github"></i> GitHub, Maven, NPM, VS Code, JetBrains IDEs
+            </li>
+            <li class="skill-item">
+                🐧 <strong>Systems & Infrastructure:</strong> Linux (Arch Linux - daily driver), Bash scripting, Package management, System administration,
+                <i class="fa-brands fa-microsoft" style="color:#0078d4;"></i> Microsoft Azure (Basic)
+            </li>
+            <li class="skill-item">
+                🧮 <strong>Specialized Skills:</strong> Algorithm Design & Development, Mathematical Modeling, Data Structures, Software Architecture, Offline-First Applications
+            </li>
+        </ul>
+
+        <h3>Practical & Hands-On Skills</h3>
+        <ul class="skill-list">
+            <li class="skill-item">
+                🚜 <strong>Equipment Operation:</strong> Agricultural machinery operation and maintenance
+            </li>
+            <li class="skill-item">
+                🔧 <strong>Technical Troubleshooting:</strong> Hardware and software diagnostics, on-site problem-solving, equipment maintenance
+            </li>
+            <li class="skill-item">
+                🔩 <strong>Fabrication:</strong> Welding and metalworking, tool handling
+            </li>
+            <li class="skill-item">
+                ⚡ <strong>Resource Management:</strong> Working efficiently with limited resources, understanding operational efficiency
+            </li>
+        </ul>
+
+        <h3>Professional & Soft Skills</h3>
+        <ul class="skill-list">
+            <li class="skill-item">
+                🧠 <strong>Problem-Solving:</strong> Critical thinking, algorithmic reasoning, debugging complex systems, troubleshooting under pressure
+            </li>
+            <li class="skill-item">
+                💪 <strong>Work Ethic:</strong> Self-sufficiency, adaptability, resilience in challenging environments, strong discipline
+            </li>
+            <li class="skill-item">
+                📋 <strong>Project Management:</strong> Task prioritization, multitasking, working in dynamic environments, meeting deadlines
+            </li>
+            <li class="skill-item">
+                🤝 <strong>Collaboration:</strong> Effective teamwork, independent work capability, professional communication
+            </li>
+            <li class="skill-item">
+                🗂️ <strong>Documentation:</strong> Impeccable record-keeping, clear technical writing, code documentation
+            </li>
+            <li class="skill-item">
+                🎯 <strong>Continuous Learning:</strong> Hunger for knowledge, open to learning from everyone, staying current with technology trends
+            </li>
+        </ul>
+
+        <h3>Physical & Environmental Capabilities</h3>
+        <ul class="skill-list">
+            <li class="skill-item">
+                🏃‍♂️ <strong>Physical Fitness:</strong> Ability to perform physically demanding work
+            </li>
+            <li class="skill-item">
+                ⏰ <strong>Endurance:</strong> Working long hours in challenging conditions
+            </li>
+            <li class="skill-item">
+                🌱 <strong>Adaptability:</strong> Thriving in real-world, dynamic work settings
+            </li>
+        </ul>
+
+        <h3>Language Proficiency</h3>
+        <ul class="skill-list">
+            <li class="skill-item">
+                🇿🇦 <strong>Afrikaans:</strong> Native proficiency (first language)
+            </li>
+            <li class="skill-item">
+                🇬🇧 <strong>English:</strong> Professional proficiency (fluent)
+            </li>
         </ul>
     </section>
 
     <footer>
-        &copy; 2026 Ehan Badenhorst
+        &copy; 2026 Ehan Badenhorst | Stellenbosch, South Africa
     </footer>
+
+    <script src="features.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            document.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
+            document.querySelector('.theme-text').textContent = isDark ? 'Light' : 'Dark';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.querySelector('.theme-icon').textContent = '☀️';
+            document.querySelector('.theme-text').textContent = 'Light';
+        }
+    </script>
 </body>
 
 </html>

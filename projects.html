@@ -19,35 +19,123 @@
             <li><a href="cv.html">CV</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-text">Dark</span>
+        </button>
     </nav>
 
     <section>
         <h2>Featured Projects</h2>
-        <span class="section-subtitle">Innovative Solutions</span>
+        <span class="section-subtitle">Innovative Solutions That Matter</span>
 
         <div class="projects">
-            <div class="card">
-                <h3>🚜 GrazingTrack</h3>
-                <p>A Progressive Web App (PWA) designed for rotational grazing management. Uses a custom algorithm to calculate land readiness.</p>
-                <p> This is an roling reales and will be worked on over to be an outstanding free porjram for farmers to use.</p>
+            <div class="card featured-project">
+                <span class="card-icon">🚜</span>
+                <h3>GrazingTrack - PWA for Rotational Grazing</h3>
+                <p><strong>Status:</strong> Active Development | Open Source</p>
+                <p>
+                    A specialized Progressive Web App designed to revolutionize how farmers manage rotational grazing and land recovery. Built with a strong focus on offline-first architecture and real-world agricultural needs.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Vanilla JavaScript</span>
+                    <span class="tech-tag">Leaflet.js</span>
+                    <span class="tech-tag">Custom CSS</span>
+                    <span class="tech-tag">localStorage</span>
+                    <span class="tech-tag">PWA</span>
+                    <span class="tech-tag">Service Workers</span>
+                </div>
+                <p><strong>🎯 Key Innovation:</strong> Developed a custom mathematical algorithm that calculates optimal field readiness based on rest periods, grazing history, and land recovery patterns. This algorithm enables farmers to make data-driven
+                    decisions without requiring backend infrastructure or constant internet connectivity.</p>
+                <p><strong>Features:</strong> Interactive map-based field management, animal group tracking, automated grazing schedules, field color saturation based on rest days, offline functionality, and no user accounts required—everything stored locally
+                    for privacy and accessibility.</p>
+                <p><strong>Impact:</strong> This is a rolling release actively worked on to become an outstanding free program for farmers. Future enhancements will include data export capabilities, advanced analytics, and integration with weather data.</p>
                 <div style="margin-top: 1.5rem;">
-                    <a href="https://ecode-22.github.io/GrazingTrack/" class="btn btn-primary">View web app</a>
+                    <a href="https://ecode-22.github.io/GrazingTrack/" target="_blank" class="btn btn-primary">Launch Live App</a>
+                    <a href="https://github.com/ecode-22/GrazingTrack" target="_blank" class="btn btn-secondary">View Source Code</a>
                 </div>
             </div>
 
             <div class="card">
-                <h3>🏠 RealHome</h3>
-                <p>A responsive real estate platform built with React, Node.js, and MongoDB featuring map integrations.</p>
+                <span class="card-icon">🏠</span>
+                <h3>RealHome - Real Estate Platform</h3>
+                <p><strong>Year:</strong> 2024</p>
+                <p>A responsive real estate listing platform featuring property search, advanced filters, and integrated Google Maps functionality for location visualization.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Google Maps API</span>
+                </div>
                 <div style="margin-top: 1.5rem;">
-                    <a href="#" class="btn btn-primary">View Project</a>
+                    <a href="https://ehanbadenhorst.github.io/Accommodate-your-dreams/Will%20test%20sits.html" target="_blank" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">📚</span>
+                <h3>CTU-Buddy - Educational Platform</h3>
+                <p><strong>Year:</strong> 2024</p>
+                <p>An educational platform built for students to manage timetables, share study resources, and collaborate effectively online.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">PHP</span>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://ehanbadenhorst.github.io/CTU-Buddy/CTU-Buddy%20_%20Home_files/Home.html" target="_blank" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">💼</span>
+                <h3>Personal Portfolio Website</h3>
+                <p><strong>Year:</strong> 2026</p>
+                <p>This website! A modern, animated portfolio showcasing projects, skills, and professional experience with thoughtful design and smooth animations.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">Custom CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Responsive Design</span>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <a href="home.html" class="btn btn-primary">You're Here!</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        &copy; 2026 Ehan Badenhorst
+        &copy; 2026 Ehan Badenhorst | Stellenbosch, South Africa
     </footer>
+
+    <script src="features.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            document.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
+            document.querySelector('.theme-text').textContent = isDark ? 'Light' : 'Dark';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.querySelector('.theme-icon').textContent = '☀️';
+            document.querySelector('.theme-text').textContent = 'Light';
+        }
+    </script>
 </body>
 
 </html>

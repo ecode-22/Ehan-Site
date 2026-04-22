@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ehan Badenhorst | Portfolio</title>
+    <title>Ehan Badenhorst | Software Engineer & Agricultural Tech Innovator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,29 +19,86 @@
             <li><a href="cv.html">CV</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-text">Dark</span>
+        </button>
     </nav>
 
     <section>
         <div class="intro-container">
             <img src="Ehan .jpeg" alt="Ehan Badenhorst" class="profile-pic">
             <div class="intro-text">
-                <h2>Software Engineering & Agricultural Innovation</h2>
-                <span class="section-subtitle">Final Year Software Engineering Student</span>
+                <h2>Software Engineering Meets Agricultural Innovation</h2>
+                <span class="section-subtitle">Building Technology for a Better Tomorrow</span>
                 <p>
-                    I specialize in building digital solutions that bridge the gap between complex software systems and real-world agricultural efficiency. Based in South Africa, I am dedicated to creating impactful, user-centric applications.
+                    I'm <strong>Ehan Badenhorst</strong>, a final-year Software Engineering student at CTU Stellenbosch, specializing in bridging the gap between advanced technology and real-world agricultural challenges. With a foundation in both <strong>software development</strong>                    and <strong>hands-on farm experience</strong>, I bring a unique perspective to problem-solving in the ag-tech sector.
                 </p>
-                <p> </p>
+                <p>
+                    Currently building <strong>GrazingTrack</strong>, an open-source Progressive Web App that uses custom algorithms to optimize rotational grazing management—helping farmers make data-driven decisions for better land recovery and livestock
+                    management.
+                </p>
+                <p>
+                    My technical expertise spans <strong>Java (Quarkus)</strong>, <strong>C#</strong>, <strong>PostgreSQL</strong>, <strong>Python</strong>, and modern web technologies, with a passion for creating efficient, user-centric applications
+                    that solve meaningful problems. I'm also a proud <strong>Linux user</strong> (running Arch, by the way), which reflects my commitment to understanding systems at a deeper level.
+                </p>
                 <div style="margin-top: 2rem;">
                     <a href="projects.html" class="btn btn-primary">View My Work</a>
                     <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
         </div>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Technologies Mastered</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Passion & Dedication</span>
+            </div>
+        </div>
     </section>
 
     <footer>
-        &copy; 2026 Ehan Badenhorst | Built for the future of AgTech
+        &copy; 2026 Ehan Badenhorst | Stellenbosch, South Africa | Built for the Future
     </footer>
+
+    <script src="features.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            document.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
+            document.querySelector('.theme-text').textContent = isDark ? 'Light' : 'Dark';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.querySelector('.theme-icon').textContent = '☀️';
+            document.querySelector('.theme-text').textContent = 'Light';
+        }
+    </script>
 </body>
 
 </html>
