@@ -42,3 +42,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Mobile nav hides while scrolling down and reappears when scrolling up
+const nav = document.querySelector('nav');
+if (nav) {
+    let lastScrollY = window.scrollY;
+
+    const handleNavScroll = () => {
+        if (window.innerWidth > 768) {
+            nav.classList.remove('nav-hidden');
+            return;
+        }
+
+        if (window.scrollY > lastScrollY && window.scrollY > 80) {
+            nav.classList.add('nav-hidden');
+        } else {
+            nav.classList.remove('nav-hidden');
+        }
+
+        lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener('scroll', handleNavScroll, { passive: true });
+    window.addEventListener('resize', handleNavScroll);
+    handleNavScroll();
+}
