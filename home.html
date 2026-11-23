@@ -8,64 +8,77 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <nav>
-        <h1>Ehan B.</h1>
-        <ul>
-            <li><a href="home.html" class="active">Home</a></li>
+<body class="editorial-site editorial-home">
+    <nav aria-label="Main navigation">
+        <h1><a href="home.html">Ehan B.</a></h1>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+            <span class="menu-label">Menu</span>
+            <span class="menu-symbol" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <ul id="site-navigation">
+            <li><a href="home.html" class="active" aria-current="page">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="cv.html">CV</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <button class="theme-toggle" onclick="toggleTheme()">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false">
             <span class="theme-icon">🌙</span>
             <span class="theme-text">Dark</span>
         </button>
     </nav>
 
-    <main class="page-content">
-        <section>
-            <div class="intro-container">
-                <img src="Ehan .jpeg" alt="Ehan Badenhorst" class="profile-pic">
-                <div class="intro-text">
-                    <h2>Software Engineering Meets Agricultural Innovation</h2>
-                    <span class="section-subtitle">Building Technology for a Better Tomorrow</span>
-                    <p>
-                        I'm <strong>Ehan Badenhorst</strong>, a final-year Software Engineering student at CTU Stellenbosch, specializing in bridging the gap between advanced technology and real-world agricultural challenges. With a foundation in both <strong>software development</strong> and <strong>hands-on farm experience</strong>, I bring a unique perspective to problem-solving in the ag-tech sector.
-                    </p>
-                    <p>
-                        Currently building <strong>GrazingTrack</strong>, an open-source Progressive Web App that uses custom algorithms to optimize rotational grazing management—helping farmers make data-driven decisions for better land recovery and livestock management.
-                    </p>
-                    <p>
-                        My technical expertise spans <strong>Java (Quarkus)</strong>, <strong>C#</strong>, <strong>PostgreSQL</strong>, <strong>Python</strong>, and modern web technologies, with a passion for creating efficient, user-centric applications that solve meaningful problems. I'm also a proud <strong>Linux user</strong> (running Arch, by the way), which reflects my commitment to understanding systems at a deeper level.
-                    </p>
-                    <div style="margin-top: 2rem;">
-                        <a href="projects.html" class="btn btn-primary">View My Work</a>
-                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+    <main class="page-content home-editorial">
+        <section class="home-hero" aria-labelledby="home-title">
+            <div class="hero-kicker"><span class="hero-kicker-dot"></span> Software engineering · Agricultural innovation · South Africa</div>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="hero-pretitle">A little code.<br>A little country.</p>
+                    <h2 id="home-title">Building for the world we <em>live in.</em></h2>
+                    <p class="hero-description">I'm Ehan Badenhorst—a software engineering student and hands-on problem solver, bringing thoughtful technology to real-world challenges.</p>
+                    <p class="hero-aside">Especially the ones growing in the field.</p>
+                    <div class="hero-actions">
+                        <a href="projects.html" class="btn btn-primary">Explore selected work <span aria-hidden="true">↗</span></a>
+                        <a href="about.html" class="hero-inline-link">A bit about me <span aria-hidden="true">↗</span></a>
                     </div>
+                    <div class="hero-index"><span>01 — 06</span><span>Independent thinker. Practical builder.</span></div>
+                </div>
+                <div class="hero-portrait">
+                    <div class="portrait-frame">
+                        <img src="Ehan .jpeg" alt="Ehan Badenhorst outdoors">
+                        <span class="portrait-stamp">STELLENBOSCH<br>33°55' S · 18°51' E</span>
+                    </div>
+                    <span class="portrait-caption">Grounded in the real world.<br>Curious about what comes next.</span>
                 </div>
             </div>
+            <div class="hero-marquee" aria-label="Software with soil under its nails">
+                <div class="marquee-track" aria-hidden="true"><span>Software with soil under its nails <i>✳</i> Built for the everyday <i>✳</i> Software with soil under its nails <i>✳</i> Built for the everyday <i>✳</i></span></div>
+            </div>
+        </section>
 
-            <div class="stats-container">
-                <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Technologies Mastered</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Passion & Dedication</span>
-                </div>
+        <section class="home-work" aria-labelledby="home-work-title">
+            <div class="home-section-heading">
+                <div><span class="editorial-overline">// A few things in motion</span><h2 id="home-work-title">Made with purpose.</h2></div>
+                <a class="hero-inline-link" href="projects.html">See all selected work <span aria-hidden="true">↗</span></a>
             </div>
+            <div class="home-project-list">
+                <a class="home-project-row" href="https://detective-interviews-leisure-agreement.trycloudflare.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="home-project-number">01</span><span class="home-project-name">GrazingTrack</span><span class="home-project-summary">Better decisions for healthier pasture.</span><span class="home-project-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="home-project-row" href="https://github.com/ecode-22/Vehicle-rental-system/tree/Devlopment" target="_blank" rel="noopener noreferrer">
+                    <span class="home-project-number">02</span><span class="home-project-name">DriveEasy</span><span class="home-project-summary">A full-stack platform to get moving.</span><span class="home-project-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="home-project-row" href="https://github.com/ecode-22/MzansiPayroll_v2.1" target="_blank" rel="noopener noreferrer">
+                    <span class="home-project-number">03</span><span class="home-project-name">Mzansi Payroll</span><span class="home-project-summary">Clear calculations, backed by tests.</span><span class="home-project-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="home-note" aria-label="Get in touch">
+            <span class="editorial-overline">// The next good idea starts somewhere</span>
+            <p>Have a thoughtful problem to solve?</p>
+            <a class="btn btn-primary" href="contact.html">Let's talk <span aria-hidden="true">↗</span></a>
         </section>
     </main>
 
@@ -89,6 +102,8 @@
             const isDark = document.body.classList.contains('dark-theme');
             document.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
             document.querySelector('.theme-text').textContent = isDark ? 'Light' : 'Dark';
+            document.querySelector('.theme-toggle').setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            document.querySelector('.theme-toggle').setAttribute('aria-pressed', String(isDark));
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         }
 
@@ -97,6 +112,8 @@
             document.body.classList.add('dark-theme');
             document.querySelector('.theme-icon').textContent = '☀️';
             document.querySelector('.theme-text').textContent = 'Light';
+            document.querySelector('.theme-toggle').setAttribute('aria-label', 'Switch to light mode');
+            document.querySelector('.theme-toggle').setAttribute('aria-pressed', 'true');
         }
     </script>
 </body>

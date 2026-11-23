@@ -4,107 +4,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Ehan Badenhorst's software projects, from offline-first agricultural tools to web platforms.">
     <title>Projects | Ehan Badenhorst</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <nav>
-        <h1>Ehan B.</h1>
-        <ul>
+<body class="editorial-site editorial-projects">
+    <nav aria-label="Main navigation">
+        <h1><a href="home.html">Ehan B.</a></h1>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+            <span class="menu-label">Menu</span>
+            <span class="menu-symbol" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <ul id="site-navigation">
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
             <li><a href="cv.html">CV</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <button class="theme-toggle" onclick="toggleTheme()">
-            <span class="theme-icon">🌙</span>
+        <button class="theme-toggle" onclick="toggleTheme()" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
             <span class="theme-text">Dark</span>
         </button>
     </nav>
 
-    <section>
-        <h2>Featured Projects</h2>
-        <span class="section-subtitle">Innovative Solutions That Matter</span>
+    <main class="projects-page">
+        <section class="projects-intro" aria-labelledby="projects-title">
+            <span class="projects-eyebrow"><span class="eyebrow-dot"></span> Selected work · 2024—2026</span>
+            <h2 id="projects-title">Built for the<br> real world.</h2>
+            <p class="projects-lede">A collection of practical software—from smarter farm management to tools that help people learn and find a place to call home.</p>
+            <div class="projects-intro-actions">
+                <a class="btn btn-primary" href="#project-list">Explore projects <span aria-hidden="true">↓</span></a>
+                <a class="projects-text-link" href="contact.html">Have a project in mind? <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="projects-overview" aria-label="Portfolio overview">
+                <div><strong id="project-count">06</strong><span>Selected projects</span></div>
+                <div><strong>Full-stack</strong><span>to desktop apps</span></div>
+                <div><strong>∞</strong><span>Curiosity to build</span></div>
+            </div>
+        </section>
 
-        <div class="projects">
-            <div class="card featured-project">
-                <span class="card-icon">🚜</span>
-                <h3>GrazingTrack - PWA for Rotational Grazing</h3>
-                <p><strong>Status:</strong> Active Development | Open Source</p>
-                <p>
-                    A specialized Progressive Web App designed to revolutionize how farmers manage rotational grazing and land recovery. Built with a strong focus on offline-first architecture and real-world agricultural needs.
-                </p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Vanilla JavaScript</span>
-                    <span class="tech-tag">Leaflet.js</span>
-                    <span class="tech-tag">Custom CSS</span>
-                    <span class="tech-tag">localStorage</span>
-                    <span class="tech-tag">PWA</span>
-                    <span class="tech-tag">Service Workers</span>
+        <section class="project-gallery" id="project-list" aria-labelledby="gallery-title">
+            <div class="gallery-heading">
+                <div>
+                    <span class="projects-eyebrow">The work</span>
+                    <h2 id="gallery-title">Projects worth a closer look.</h2>
                 </div>
-                <p><strong>🎯 Key Innovation:</strong> Developed a custom mathematical algorithm that calculates optimal field readiness based on rest periods, grazing history, and land recovery patterns. This algorithm enables farmers to make data-driven
-                    decisions without requiring backend infrastructure or constant internet connectivity.</p>
-                <p><strong>Features:</strong> Interactive map-based field management, animal group tracking, automated grazing schedules, field color saturation based on rest days, offline functionality, and no user accounts required—everything stored locally
-                    for privacy and accessibility.</p>
-                <p><strong>Impact:</strong> This is a rolling release actively worked on to become an outstanding free program for farmers. Future enhancements will include data export capabilities, advanced analytics, and integration with weather data.</p>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://ecode-22.github.io/GrazeTrack-V2/" target="_blank" class="btn btn-primary">Launch Live App</a>
-                    <a href="https://github.com/ecode-22/GrazeTrack-V2" target="_blank" class="btn btn-secondary">View Source Code</a>
-                </div>
+                <p>From the first idea to the details that make it useful.</p>
             </div>
 
-            <div class="card">
-                <span class="card-icon">🏠</span>
-                <h3>RealHome - Real Estate Platform</h3>
-                <p><strong>Year:</strong> 2024</p>
-                <p>A responsive real estate listing platform featuring property search, advanced filters, and integrated Google Maps functionality for location visualization.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">React.js</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">Google Maps API</span>
+            <div class="project-toolbar">
+                <div class="project-filters" role="group" aria-label="Filter projects by category">
+                    <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All work <span>06</span></button>
+                    <button class="filter-chip" type="button" data-filter="agriculture" aria-pressed="false">Agriculture</button>
+                    <button class="filter-chip" type="button" data-filter="web" aria-pressed="false">Web apps</button>
+                    <button class="filter-chip" type="button" data-filter="frontend" aria-pressed="false">Frontend</button>
+                    <button class="filter-chip" type="button" data-filter="desktop" aria-pressed="false">Desktop</button>
                 </div>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://ehanbadenhorst.github.io/Accommodate-your-dreams/Will%20test%20sits.html" target="_blank" class="btn btn-primary">View Project</a>
-                </div>
+                <label class="project-search">
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <span class="visually-hidden">Search projects</span>
+                    <input id="project-search" type="search" placeholder="Search projects or tech..." autocomplete="off">
+                    <kbd>/</kbd>
+                </label>
             </div>
+            <p class="project-results" id="project-results" aria-live="polite">Showing all 6 projects</p>
 
-            <div class="card">
-                <span class="card-icon">📚</span>
-                <h3>CTU-Buddy - Educational Platform</h3>
-                <p><strong>Year:</strong> 2024</p>
-                <p>An educational platform built for students to manage timetables, share study resources, and collaborate effectively online.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">PHP</span>
-                </div>
-                <div style="margin-top: 1.5rem;">
-                    <a href="https://ehanbadenhorst.github.io/CTU-Buddy/CTU-Buddy%20_%20Home_files/Home.html" target="_blank" class="btn btn-primary">View Project</a>
-                </div>
-            </div>
+            <div class="projects project-grid" id="project-grid">
+                <article class="card project-card project-featured" data-category="agriculture" data-search="grazingtrack grazing agriculture farm rotational grazing land recovery pwa offline javascript leaflet localstorage service workers open source">
+                    <div class="project-art grazing-art" aria-hidden="true">
+                        <div class="art-topline"><span>GRAZINGTRACK</span><span class="art-live"><i></i> IN THE FIELD</span></div>
+                        <div class="field-map">
+                            <span class="field field-one">NORTH<br>PASTURE</span>
+                            <span class="field field-two">CREEK<br>MEADOW</span>
+                            <span class="field field-three">SOUTH<br>RIDGE</span>
+                            <span class="map-pin">✦</span>
+                        </div>
+                        <div class="art-caption"><span>RECOVERY AT A GLANCE</span><strong>Time to thrive.</strong></div>
+                        <span class="art-orbit orbit-one"></span>
+                        <span class="art-orbit orbit-two"></span>
+                    </div>
+                    <div class="project-copy">
+                        <div class="project-meta"><span class="project-label">Featured · Open source</span><span class="project-year">In active development</span></div>
+                        <h3>GrazingTrack</h3>
+                        <p class="project-subtitle">A better rhythm for the land.</p>
+                        <p>An offline-first field management PWA helping farmers plan rotational grazing, track animal groups, and give pastures time to recover—even when the internet doesn't reach the farm.</p>
+                        <ul class="project-highlights">
+                            <li><span>01</span> Recovery scoring informed by grazing history and rest periods</li>
+                            <li><span>02</span> Interactive field maps, schedules, and animal group tracking</li>
+                            <li><span>03</span> Local-first by design: no account or connection required</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Leaflet.js</span>
+                            <span class="tech-tag">PWA</span>
+                            <span class="tech-tag">Service Workers</span>
+                            <span class="tech-tag">localStorage</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-primary" href="https://detective-interviews-leisure-agreement.trycloudflare.com/" target="_blank" rel="noopener noreferrer">Open the live app <span aria-hidden="true">↗</span></a>
+                            <a class="project-source-link" href="https://github.com/ecode-22/grazetrack-vite" target="_blank" rel="noopener noreferrer">View current source <span aria-hidden="true">↗</span></a>
+                        </div>
+                        <p class="project-access-note">Create an account to enter the farm workspace.</p>
+                    </div>
+                </article>
 
-            <div class="card">
-                <span class="card-icon">💼</span>
-                <h3>Personal Portfolio Website</h3>
-                <p><strong>Year:</strong> 2026</p>
-                <p>This website! A modern, animated portfolio showcasing projects, skills, and professional experience with thoughtful design and smooth animations.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">Custom CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">Responsive Design</span>
-                </div>
-                <div style="margin-top: 1.5rem;">
-                    <a href="home.html" class="btn btn-primary">You're Here!</a>
-                </div>
+                <article class="card project-card" data-category="web" data-search="driveeasy vehicle rental system car booking django django rest framework python react vite javascript jwt renter customer availability calendar maps geocoding docker full stack">
+                    <div class="project-art rental-art" aria-hidden="true">
+                        <div class="rental-skyline"><span></span><span></span><span></span><span></span></div>
+                        <div class="rental-route"><i></i><i></i><i></i></div>
+                        <div class="rental-car"><span class="car-window"></span><span class="car-wheel wheel-left"></span><span class="car-wheel wheel-right"></span></div>
+                        <div class="rental-art-label"><span>DRIVE EASY</span><strong>Your next trip, in motion.</strong></div>
+                        <span class="rental-art-tag">PICK UP · GO</span>
+                    </div>
+                    <div class="project-copy">
+                        <div class="project-meta"><span class="project-label">Full-stack · Mobility</span><span class="project-year">Development branch</span></div>
+                        <h3>DriveEasy</h3>
+                        <p class="project-subtitle">A smoother way to get moving.</p>
+                        <p>A car-rental platform where customers can discover and book vehicles while renters manage listings, review requests, and coordinate handovers.</p>
+                        <ul class="project-highlights">
+                            <li><span>01</span> Separate customer and vehicle-renter workflows</li>
+                            <li><span>02</span> Location-aware vehicle discovery and booking flow</li>
+                            <li><span>03</span> Django REST API paired with a React interface</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Vite</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django REST</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-source-link" href="https://github.com/ecode-22/Vehicle-rental-system/tree/Devlopment" target="_blank" rel="noopener noreferrer">Explore the code <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" data-category="web" data-search="realhome real estate property homes listings search filters maps google maps react node mongodb">
+                    <div class="project-art realhome-art" aria-hidden="true">
+                        <div class="mini-window"><span class="window-dots">● ● ●</span><span>realhome / discover</span><span class="window-menu">☰</span></div>
+                        <div class="home-preview"><span class="home-sun"></span><span class="home-building"></span><span class="home-tree"></span><span class="home-tag">Find your place.</span></div>
+                    </div>
+                    <div class="project-copy">
+                        <div class="project-meta"><span class="project-label">Web application</span><span class="project-year">2024</span></div>
+                        <h3>RealHome</h3>
+                        <p class="project-subtitle">A clearer way to find home.</p>
+                        <p>A responsive property discovery platform with practical search filters and map-based location browsing, helping people explore listings with more context.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Google Maps API</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-source-link" href="https://ehanbadenhorst.github.io/Accommodate-your-dreams/Will%20test%20sits.html" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" data-category="desktop" data-search="mzansi payroll payroll calculator contractors salary deductions net pay gross pay c# windows forms winforms mstest unit testing desktop">
+                    <div class="project-art payroll-art" aria-hidden="true">
+                        <div class="payroll-window">
+                            <div class="payroll-window-top"><span>PAYROLL / SUMMARY</span><span>•••</span></div>
+                            <div class="payroll-total"><span>NET PAY</span><strong>R24,272<span>.50</span></strong></div>
+                            <div class="payroll-row"><span>Gross pay</span><i></i><b>R38,000</b></div>
+                            <div class="payroll-row"><span>UIF · PAYE · fees</span><i></i><b>− R13,727.50</b></div>
+                            <div class="payroll-progress"><span></span></div>
+                        </div>
+                        <span class="payroll-art-caption">CLEAR NUMBERS. CONFIDENT DECISIONS.</span>
+                    </div>
+                    <div class="project-copy">
+                        <div class="project-meta"><span class="project-label">Desktop · Finance</span><span class="project-year">C# project</span></div>
+                        <h3>Mzansi Payroll</h3>
+                        <p class="project-subtitle">Payroll calculations made transparent.</p>
+                        <p>A Windows desktop tool for contractor payroll calculations, with input validation and a separate calculation layer covered by unit and integration tests.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Windows Forms</span>
+                            <span class="tech-tag">.NET</span>
+                            <span class="tech-tag">MSTest</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-source-link" href="https://github.com/ecode-22/MzansiPayroll_v2.1" target="_blank" rel="noopener noreferrer">View source &amp; tests <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" data-category="web" data-search="ctu buddy education student study platform timetable resources collaboration html css javascript php">
+                    <div class="project-art study-art" aria-hidden="true">
+                        <div class="study-note note-back"></div>
+                        <div class="study-note note-front"><span class="note-mark">C.</span><span class="note-lines"></span><span class="note-check">✓</span></div>
+                        <span class="study-spark spark-one">✳</span><span class="study-spark spark-two">✳</span>
+                        <span class="study-art-caption">A little more in sync.</span>
+                    </div>
+                    <div class="project-copy">
+                        <div class="project-meta"><span class="project-label">Education</span><span class="project-year">2024</span></div>
+                        <h3>CTU-Buddy</h3>
+                        <p class="project-subtitle">Study life, better organized.</p>
+                        <p>A student-focused platform for keeping timetables, sharing study resources, and making online collaboration feel a little easier.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-source-link" href="https://ehanbadenhorst.github.io/CTU-Buddy/CTU-Buddy%20_%20Home_files/Home.html" target="_blank" rel="noopener noreferrer">View project <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card project-card" data-category="frontend" data-search="portfolio personal website frontend web design html css javascript responsive animation">
+                    <div class="project-art portfolio-art" aria-hidden="true">
+                        <div class="portfolio-art-grid"></div>
+                        <span class="portfolio-monogram">EB<span>.</span></span>
+                        <span class="portfolio-art-caption">Curious by nature.<br>Thoughtful by design.</span>
+                        <span class="portfolio-art-index">PORTFOLIO / 2026</span>
+                    </div>
+                    <div class="project-copy">
+                        <div class="project-meta"><span class="project-label">Personal project</span><span class="project-year">2026</span></div>
+                        <h3>Personal Portfolio</h3>
+                        <p class="project-subtitle">A home for the work and the why.</p>
+                        <p>This site brings together my projects, skills, and background in one place—with responsive layouts, subtle motion, and a little personality.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive design</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="project-source-link" href="https://github.com/ecode-22/Ehan-Site" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+            <div class="project-empty" id="project-empty" hidden>
+                <span aria-hidden="true">⌕</span>
+                <h3>No projects found</h3>
+                <p>Try a different search or category.</p>
+                <button class="project-reset" id="project-reset" type="button">Clear filters</button>
+            </div>
+        </section>
+
+        <section class="projects-cta" aria-label="Get in touch">
+            <span class="cta-orbit" aria-hidden="true">✳</span>
+            <div><span class="projects-eyebrow">Have something in mind?</span><h2>Let's make useful things.</h2><p>I'm always up for a thoughtful problem and a good conversation.</p></div>
+            <a href="contact.html" class="btn btn-primary">Start a conversation <span aria-hidden="true">↗</span></a>
+        </section>
+    </main>
 
     <footer>
         &copy; 2026 Ehan Badenhorst | Stellenbosch, South Africa
@@ -126,6 +275,8 @@
             const isDark = document.body.classList.contains('dark-theme');
             document.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
             document.querySelector('.theme-text').textContent = isDark ? 'Light' : 'Dark';
+            document.querySelector('.theme-toggle').setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            document.querySelector('.theme-toggle').setAttribute('aria-pressed', String(isDark));
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         }
 
@@ -134,7 +285,69 @@
             document.body.classList.add('dark-theme');
             document.querySelector('.theme-icon').textContent = '☀️';
             document.querySelector('.theme-text').textContent = 'Light';
+            document.querySelector('.theme-toggle').setAttribute('aria-label', 'Switch to light mode');
+            document.querySelector('.theme-toggle').setAttribute('aria-pressed', 'true');
         }
+
+        const filterButtons = document.querySelectorAll('.filter-chip');
+        const searchInput = document.querySelector('#project-search');
+        const projectCards = document.querySelectorAll('.project-card');
+        const resultsMessage = document.querySelector('#project-results');
+        const emptyState = document.querySelector('#project-empty');
+        const projectCount = projectCards.length;
+        document.querySelector('#project-count').textContent = String(projectCount).padStart(2, '0');
+        document.querySelector('[data-filter="all"] span').textContent = String(projectCount).padStart(2, '0');
+        let activeFilter = 'all';
+
+        function updateProjects() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                const matchesCategory = activeFilter === 'all' || card.dataset.category === activeFilter;
+                const matchesSearch = card.dataset.search.includes(query) || card.textContent.toLowerCase().includes(query);
+                const isVisible = matchesCategory && matchesSearch;
+                card.hidden = !isVisible;
+                if (isVisible) visibleCount++;
+            });
+
+            resultsMessage.textContent = query || activeFilter !== 'all'
+                ? `Showing ${visibleCount} of ${projectCount} projects`
+                : `Showing all ${projectCount} projects`;
+            emptyState.hidden = visibleCount > 0;
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                activeFilter = button.dataset.filter;
+                filterButtons.forEach(filterButton => {
+                    const isActive = filterButton === button;
+                    filterButton.classList.toggle('is-active', isActive);
+                    filterButton.setAttribute('aria-pressed', String(isActive));
+                });
+                updateProjects();
+            });
+        });
+
+        searchInput.addEventListener('input', updateProjects);
+        document.querySelector('#project-reset').addEventListener('click', () => {
+            searchInput.value = '';
+            activeFilter = 'all';
+            filterButtons.forEach(button => {
+                const isActive = button.dataset.filter === 'all';
+                button.classList.toggle('is-active', isActive);
+                button.setAttribute('aria-pressed', String(isActive));
+            });
+            updateProjects();
+            searchInput.focus();
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+                event.preventDefault();
+                searchInput.focus();
+            }
+        });
     </script>
 </body>
 

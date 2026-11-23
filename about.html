@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <nav>
-        <h1>Ehan B.</h1>
-        <ul>
+<body class="editorial-site">
+    <nav aria-label="Main navigation">
+        <h1><a href="home.html">Ehan B.</a></h1>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+            <span class="menu-label">Menu</span>
+            <span class="menu-symbol" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <ul id="site-navigation">
             <li><a href="home.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="about.html" class="active" aria-current="page">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="cv.html">CV</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <button class="theme-toggle" onclick="toggleTheme()">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to dark mode" aria-pressed="false">
             <span class="theme-icon">🌙</span>
             <span class="theme-text">Dark</span>
         </button>
@@ -98,6 +102,8 @@
             const isDark = document.body.classList.contains('dark-theme');
             document.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
             document.querySelector('.theme-text').textContent = isDark ? 'Light' : 'Dark';
+            document.querySelector('.theme-toggle').setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            document.querySelector('.theme-toggle').setAttribute('aria-pressed', String(isDark));
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         }
 
@@ -106,6 +112,8 @@
             document.body.classList.add('dark-theme');
             document.querySelector('.theme-icon').textContent = '☀️';
             document.querySelector('.theme-text').textContent = 'Light';
+            document.querySelector('.theme-toggle').setAttribute('aria-label', 'Switch to light mode');
+            document.querySelector('.theme-toggle').setAttribute('aria-pressed', 'true');
         }
     </script>
 </body>
